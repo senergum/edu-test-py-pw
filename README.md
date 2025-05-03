@@ -63,6 +63,8 @@ pytest test/smoke --browser firefox --headless true --alluredir=reports/allure-r
 * **Покупка**       page/pay/pay_page.py
 
 ## **Архитектура проекта**
+<details><summary>Структура директорий</summary><p>
+
 ```
 /test-projectname/                  # корневой каталог (репозиторий) проекта авто-тестов
 ├── /page/                          # page object модели
@@ -132,6 +134,8 @@ pytest test/smoke --browser firefox --headless true --alluredir=reports/allure-r
 ├── README.md                       # описание проекта
 └── .gitignore                      # игнор лист git
 ```
+</p></details>
+
 * Отчеты и артефакты папки `report` только для локального хранения, в эксплуатации подразумевается хранение артефактов в `jenkins`.
 
 ## **Работа в репозитории**
