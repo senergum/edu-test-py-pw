@@ -2,18 +2,23 @@
 * Учебный проект (и шаблон) автоматизации труда ручного тестирования.
 * Основной функционал - UI скрипты на `python` с использованием библиотеки `playwright`.
 * В качестве примера автоматизируется проект [saucedemo](https://www.saucedemo.com/v1/)
-* [Скачать `Python` 13+](https://www.python.org/downloads/)
-* [Инструкция установки `Python` глава 2.1, эксплуатация глава 3](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
-* [Скачать `PyCharm` Community Edition 2025+](https://www.jetbrains.com/ru-ru/pycharm/download/other.html)
-* [Инструкция установки `PyCharm` глава 2.2, эксплуатация глава 4](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
-* [Скачать `git`](https://git-scm.com/downloads)
-* [Инструкция установки и эксплуатации `git` глава 4.5](https://disk.yandex.ru/i/p6A-v9AiGy5qxA)
+ 
+## Подготовка:
+* [Скачать `Python` версии 13+](https://www.python.org/downloads/)
+  * [Инструкция установки `Python` глава 2.1, эксплуатация глава 3](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
+* [Скачать `git` версии 2.49+](https://git-scm.com/downloads)
+  * [Инструкция установки и эксплуатации `git` глава 4.5](https://disk.yandex.ru/i/p6A-v9AiGy5qxA)
+* IDE:
+  * `PyCharm` - Рекомендуемый способ взаимодействия с `python`
+    * [Скачать `PyCharm` версии Community Edition 2024+](https://www.jetbrains.com/ru-ru/pycharm/download/other.html)
+    * [Инструкция установки `PyCharm` глава 2.2, эксплуатация глава 4](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
+* Подробнее описано в файлах `IDE.md` и `GIT.md` в папке `docs` в корневой директории проекта
 
 ## **Требования к запуску**
 * Описаны в файле `requirements.txt`
 * Установка требований из этого файла:
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 * Альтернативная установка требований:
 ```
@@ -128,6 +133,8 @@ pytest test/smoke --browser firefox --headless true --alluredir=reports/allure-r
 │   ├── CODE.md                     # описание стиля кода в проекте
 │   ├── ARCH.md                     # описание вариантов архитектур проекта
 │   ├── MD.md                       # описание markdown разметки
+│   ├── IDE.md                      # описание работы в различных IDE и их настройки
+│   ├── TERMINAL.md                 # описание работы в различных терминалах (cmd\unix\bash)
 │   └── GIT.md                      # описание работы с git и bitbucket
 ├── pytest.ini                      # конфигурация тестов
 ├── requirements.txt                # зависимости
@@ -137,6 +144,7 @@ pytest test/smoke --browser firefox --headless true --alluredir=reports/allure-r
 </p></details>
 
 * Отчеты и артефакты папки `report` только для локального хранения, в эксплуатации подразумевается хранение артефактов в `jenkins`.
+* Подробнее описано в файле `ARCH.md` в папке `docs` в корневой директории проекта
 
 ## **Работа в репозитории**
 * **Пример безопасного workflow в `git`**
@@ -157,4 +165,4 @@ git commit -m "Комментарий"
 git push -u origin main
 ```
 #### **Подключение к репозиторию через `git`**:
-* Описано в файле `GIT.md` в папке `docs` в корневой директории проекта
+* Подробнее описано в файле `GIT.md` в папке `docs` в корневой директории проекта
