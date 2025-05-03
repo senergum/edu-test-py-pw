@@ -105,12 +105,6 @@ pytest test/smoke --browser firefox --headless true --alluredir=reports/allure-r
 │   │   └── test_locust.py
 │   ├── test_run.py                 # запуск всех тестов
 │   └── __init__.py
-├── /report/                        # отчеты и артефакты (если не подключено хранение в jenkins)
-│   ├── /screenshots/               # скриншоты
-│   ├── /allure-results/            # allure отчеты
-│   ├── /pytest-html/               # pytest отчеты
-│   ├── /locust/                    # locust отчеты нагрузочного
-│   └── /logs/                      # логи выполнения тестов
 ├── /config/                        # конфигурации
 │   ├── conftest.py                 # фикстуры pytest
 │   ├── logger.py                   # конфигурация логирования
@@ -121,9 +115,17 @@ pytest test/smoke --browser firefox --headless true --alluredir=reports/allure-r
 │   ├── asserts.py                  # проверки
 │   ├── helpers.py                  # вспомогательные элементы
 │   └── __init__.py
+├── /report/                        # отчеты и артефакты (если не подключено хранение в jenkins)
+│   ├── /screenshots/               # скриншоты
+│   ├── /allure-results/            # allure отчеты
+│   ├── /pytest-html/               # pytest отчеты
+│   ├── /locust/                    # locust отчеты нагрузочного
+│   └── /logs/                      # логи выполнения тестов
 ├── /docs/                          # документация
 │   ├── PLAN.md                     # документация проекта, план автоматизации, тест-кейсы и история изменений
 │   ├── CODE.md                     # описание стиля кода в проекте
+│   ├── ARCH.md                     # описание вариантов архитектур проекта
+│   ├── MD.md                       # описание markdown разметки
 │   └── GIT.md                      # описание работы с git и bitbucket
 ├── pytest.ini                      # конфигурация тестов
 ├── requirements.txt                # зависимости
