@@ -57,32 +57,54 @@ pytest test/smoke --browser firefox --headless true --alluredir=reports/allure-r
 ```
 
 ## **Покрытые авто-тестами модули**
-* Авторизация (page/login/...)
-* Товары (page/inventory/...)
-* Корзина (page/cart/...)
-* Покупка (page/cart/...)
+* **Авторизация**   page/login/login_page.py
+* **Товары**        page/inventory/inventory_page.py
+* **Корзина**       page/cart/cart_page.py
+* **Покупка**       page/pay/pay_page.py
 
 ## **Архитектура проекта**
 ```
 /test-projectname/                  # корневой каталог (репозиторий) проекта авто-тестов
 ├── /page/                          # page object модели
-│   ├── __init__.py
-│   │   /module_page/               # папка с page object моделью и данными модуля
-│   │   ├── __init__.py
-│   │   ├── module_page.py          # page object класс модуля
-│   │   ├── module_locators.py      # селекторы элементов модулей
-│   │   └── module_data.py          # тестовые данные модуля
-│   └── base_page.py                # базовый page object класс (основные методы работы со страницей)
+│   ├── /login/                     # папка с page object моделью и данными модуля ЛОГИН
+│   │   ├── login_page.py           # page object класс модуля ЛОГИН
+│   │   ├── login_data.py           # тестовые данные модуля ЛОГИН
+│   │   ├── login_locators.py       # селекторы элементов модулей ЛОГИН
+│   │   └── __init__.py
+│   ├── /inventory/                 # папка с page object моделью и данными модуля ТОВАРЫ
+│   │   ├── inventory_page.py       # page object класс модуля ТОВАРЫ
+│   │   ├── inventory_data.py       # тестовые данные модуля ТОВАРЫ
+│   │   ├── inventory_locators.py   # селекторы элементов модулей ТОВАРЫ
+│   │   └── __init__.py
+│   ├── /cart/                      # папка с page object моделью и данными модуля КОРЗИНА
+│   │   ├── cart_page.py            # page object класс модуля КОРЗИНА
+│   │   ├── cart_data.py            # тестовые данные модуля КОРЗИНА
+│   │   ├── cart_locators.py        # селекторы элементов модулей КОРЗИНА
+│   │   └── __init__.py
+│   ├── /pay/                       # папка с page object моделью и данными модуля ПОКУПКИ
+│   │   ├── pay_page.py             # page object класс модуля ПОКУПКИ
+│   │   ├── pay_locators.py         # селекторы элементов модулей ПОКУПКИ
+│   │   ├── pay_data.py             # тестовые данные модуля ПОКУПКИ
+│   │   └── __init__.py
+│   ├── base_page.py                # базовый page object класс (основные методы работы со страницей)
+│   └── __init__.py 
 ├── /test/                          # тестовые сценарии с группировкой по видам
-│   ├── __init__.py
 │   ├── /smoke/                     # дымы (фронт)
-│   │   └── test_module.py
+│   │   ├── test_smoke_login.py
+│   │   ├── test_smoke_inv.py
+│   │   ├── test_smoke_cart.py
+│   │   └── test_smoke_pay.py
 │   ├── /accept/                    # приемка (фронт)
-│   │   └── test_module.py
+│   │   ├── test_accept_login.py
+│   │   ├── test_accept_inv.py
+│   │   ├── test_accept_cart.py
+│   │   └── test_accept_pay.py
 │   ├── /api/                       # апи (бэк)
-│   │   └── test_module_api.py
+│   │   └── test_api_login.py
 │   ├── /load/                      # нагрузочное (locust)
-│   └────── locust_smoke.py
+│   │   └── test_locust.py
+│   ├── test_run.py                 # запуск всех тестов
+│   └── __init__.py
 ├── /report/                        # отчеты и артефакты (если не подключено хранение в jenkins)
 │   ├── /screenshots/               # скриншоты
 │   ├── /allure-results/            # allure отчеты
@@ -90,15 +112,15 @@ pytest test/smoke --browser firefox --headless true --alluredir=reports/allure-r
 │   ├── /locust/                    # locust отчеты нагрузочного
 │   └── /logs/                      # логи выполнения тестов
 ├── /config/                        # конфигурации
-│   ├── __init__.py
 │   ├── conftest.py                 # фикстуры pytest
-│   └── logger.py                   # конфигурация логирования
+│   ├── logger.py                   # конфигурация логирования
+│   └── __init__.py
 ├── /utils/                         # вспомогательные инструменты
-│   ├── __init__.py
 │   ├── /drivers/                   # веб-драйвера и портативные браузеры
 │   ├── actions.py                  # сложные методы и действия на страницах
 │   ├── asserts.py                  # проверки
-│   └── helpers.py                  # вспомогательные элементы
+│   ├── helpers.py                  # вспомогательные элементы
+│   └── __init__.py
 ├── /docs/                          # документация
 │   ├── PLAN.md                     # документация проекта, план автоматизации, тест-кейсы и история изменений
 │   ├── CODE.md                     # описание стиля кода в проекте
@@ -125,8 +147,8 @@ git status
 # Создание коммита
 git commit -m "Комментарий"
 
-# Отправка изменений на сервер
-git push origin main
+# Отправка изменений на сервер (-u чтобы запомнил ветки, потом можно просто git push)
+git push -u origin main
 ```
 #### **Подключение к репозиторию через `git`**:
 * Описано в файле `GIT.md` в папке `docs` в корневой директории проекта
