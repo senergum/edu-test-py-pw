@@ -12,14 +12,12 @@
   * [Инструкция установки и эксплуатации `git` глава 4.5](https://disk.yandex.ru/i/p6A-v9AiGy5qxA)
 * IDE:
   * `OpenIDE` - Российский IDE
-    * [Скачать `OpenIDE` версии 243+](https://openide.ru/download/)
-    * [Установка `OpenIDE` глава !!! | Эксплуатация глава !!!](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
+    * [Скачать версии 243+](https://openide.ru/download/)
   * `PyCharm` - Рекомендуемый способ взаимодействия с `python`
-    * [Скачать `PyCharm` версии Community Edition 2024+](https://www.jetbrains.com/ru-ru/pycharm/download/other.html)
-    * [Установка `PyCharm` глава 2.2 | Эксплуатация глава 4](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
+    * [Скачать версии Community Edition 2024+](https://www.jetbrains.com/ru-ru/pycharm/download/other.html)
+    * [Установка глава 2.2 | Эксплуатация глава 4](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
   * `VSCode` - Популярный IDE
-    * [Скачать `VSCode` версии 1.99+](https://code.visualstudio.com/docs/?dv=win64user)
-    * [Установка `VSCode` глава !!! | Эксплуатация глава !!!](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
+    * [Скачать версии 1.99+](https://code.visualstudio.com/docs/?dv=win64user)
 </p></details>
 * Подробнее в файлах `IDE.md` и `GIT.md`, в папке `docs`, в корневой директории проекта
 
