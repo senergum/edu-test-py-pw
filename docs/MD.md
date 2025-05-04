@@ -194,8 +194,18 @@ H<sub>2</sub>O и E=mc<sup>2</sup>
   <p>Скрытое содержимое с <strong>форматированием</strong></p>
 </details>
 
+В одну строку:
+<details><summary>Показать</summary><p>Содержимое</p></details>
+
 Кнопки:
 <button onclick="alert('Clicked!')">Нажми меня</button>
+
+Детали/спойлер кнопкой:
+<button onclick="alert('Clicked!')">
+<details><summary>Показать</summary><p>
+Содержимое
+</p></details>
+</button>
 
 Прогресс-бар:
 <progress value="75" max="100"></progress>
