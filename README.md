@@ -5,25 +5,7 @@
  
 ## Подготовка:
 
-<button onclick="alert('Clicked!')">
-<details><summary>Ссылки на скачивание и инструкции по настройке среды разработки</summary><p>
-
-* [Скачать `Python` версии 13+](https://www.python.org/downloads/)
-  * [Инструкция установки `Python` глава 2.1, эксплуатация глава 3](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
-* [Скачать `git` версии 2.49+](https://git-scm.com/downloads)
-  * [Инструкция установки и эксплуатации `git` глава 4.5](https://disk.yandex.ru/i/p6A-v9AiGy5qxA)
-* IDE:
-  * `OpenIDE` - Российский IDE
-    * [Скачать версии 243+](https://openide.ru/download/)
-  * `PyCharm` - Рекомендуемый способ взаимодействия с `python`
-    * [Скачать версии Community Edition 2024+](https://www.jetbrains.com/ru-ru/pycharm/download/other.html)
-    * [Установка глава 2.2 | Эксплуатация глава 4](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
-  * `VSCode` - Популярный IDE
-    * [Скачать версии 1.99+](https://code.visualstudio.com/docs/?dv=win64user)
-</p></details>
-</button>
-
-<details><summary>Ссылки на скачивание и инструкции по настройке среды разработки</summary><p>
+<details><summary>==[НАЖМИ]== Ссылки на скачивание и инструкции по настройке среды разработки</summary><p>
 
 * [Скачать `Python` версии 13+](https://www.python.org/downloads/)
   * [Инструкция установки `Python` глава 2.1, эксплуатация глава 3](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
