@@ -3,11 +3,9 @@
 ## 0. Установка Python
 ### Windows
 #### Скачать Python
-* Официальный сайт: python.org/downloads
+* Официальный сайт: [**Python 13+**](python.org/downloads)
 * Выберите версию 3.13+ (галочка "Add Python to PATH" при установке!).
-#### Скачать Python
-* Официальный сайт: python.org/downloads
-* Выберите версию 3.13+ (галочка "Add Python to PATH" при установке!).
+* Проверка инсталляции пакетов в терминале:
 ```bash
 python --version                            # Проверка основной версии
 python -m pip --version                     # Проверка pip

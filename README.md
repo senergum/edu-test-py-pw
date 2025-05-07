@@ -32,7 +32,7 @@ pip install -r requirements.txt
 ```
 pip install playwright pytest pytest-playwright pytest-html allure-pytest requests locust
 ```
-* После установки пакетов, установите браузера `playwright`, этой командой установятся все 3 (firefox, chromium, webkit) браузера:
+* После установки пакетов, установите браузера `playwright`, этой командой установятся 3 (firefox, chromium, webkit) браузера:
 ```
 playwright install
 ```
