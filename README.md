@@ -5,7 +5,10 @@
  
 ## Подготовка:
 
-<details><summary>==[НАЖМИ]== Ссылки на скачивание и инструкции по настройке среды разработки</summary><p>
+<details>
+<summary>
+==[НАЖМИ]== Ссылки на скачивание и инструкции по настройке среды разработки
+</summary><p>
 
 * [Скачать `Python` версии 13+](https://www.python.org/downloads/)
   * [Инструкция установки `Python` глава 2.1, эксплуатация глава 3](https://disk.yandex.ru/edit/d/ziggIjO2lsG0H2023WbIniPegnqahzm72s0qoIz-cKg6UlFmWEZta1prdw)
@@ -20,6 +23,7 @@
   * `VSCode` - Популярный IDE
     * [Скачать версии 1.99+](https://code.visualstudio.com/docs/?dv=win64user)
 </p></details>
+
 * Подробнее в файлах `IDE.md` и `GIT.md`, в папке `docs`, в корневой директории проекта
 
 ## **Требования к запуску**
@@ -84,7 +88,10 @@ allure generate reports/allure-results -o reports/allure-report --clean
 * **Покупка**       page/pay/pay_page.py
 
 ## **Архитектура проекта**
-<details><summary>Структура директорий</summary><p>
+<details>
+<summary>
+==[НАЖМИ]== Структура директорий
+</summary><p>
 
 ```
 /test-projectname/                  # корневой каталог (репозиторий) проекта авто-тестов

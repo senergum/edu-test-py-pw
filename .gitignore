@@ -4,6 +4,7 @@
 /screenshots/
 /allure-results/
 /reports/allure-results/
+/reports/logs/
 *.log
 *.orig
 *.rar
