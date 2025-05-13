@@ -2,16 +2,13 @@
 # Команда для установки:
 # pip install requirements.txt
 # Команда для раздельной установки:
-# pip install playwright pytest pytest-playwright pytest-html allure-pytest requests locust
+# pip install playwright pytest pytest-html allure-pytest requests locust
 # Команда формирования этого документа (заменяет старый т.е. этот):
 # pip freeze > requirements.txt
 
 # базовые библиотеки тестирования
 playwright==1.51.0 # основной фреймворк тестирования ui
 pytest==8.3.5 # библиотека управления тестами
-
-# интеграции
-pytest-playwright==0.7.0 # библиотека интеграции пайтест в фреймворк тестирования
 
 # отчёты
 pytest-html==4.1.1 # отчеты пайтест в формате хтмл

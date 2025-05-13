@@ -1,4 +1,5 @@
 import pytest
+import allure
 from page.login.login_page import LoginPage
 from page.login.login_data import *
 from page.inventory.inventory_page import InventoryPage
@@ -46,6 +47,9 @@ def logged_in_page(login_page):
     login_page.logout()
 
 class TestSauceDemo:
+    # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_login_logout --browser=firefox --headless --alluredir=reports/allure-results
+    @allure.title("Проверка входа и выхода")
+    @allure.description("Проверяет, что пользователь может войти и выйти из системы")
     @pytest.mark.smoke
     def test_login_logout(self, login_page):
         """Проверка входа и выхода"""
@@ -53,13 +57,16 @@ class TestSauceDemo:
         assert login_page.page.url == INVENTORY_URL
         login_page.logout()
         assert login_page.page.url == LOGIN_URL
+        login_page.logger.info("Тест логина успешный")
 
+    # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_product_sorting --browser=firefox --headless
     @pytest.mark.smoke
     def test_product_sorting(self, logged_in_page, inventory_page):
         """Проверка сортировки товаров"""
         inventory_page.sort_products_low_to_high()
         # Здесь можно добавить проверку корректности сортировки
 
+    # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_add_to_cart --browser=firefox --headless
     @pytest.mark.smoke
     def test_add_to_cart(self, logged_in_page, inventory_page):
         """Добавление товаров в корзину"""
@@ -71,6 +78,7 @@ class TestSauceDemo:
         # Проверка отсутствия счетчика корзины
         inventory_page.cart_badge_not_visible()
 
+    # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_cart --browser=firefox --headless
     @pytest.mark.smoke
     def test_cart(self, logged_in_page, cart_page, inventory_page):
         """Добавление товаров в корзину"""
@@ -80,9 +88,9 @@ class TestSauceDemo:
 
         # Очистка корзины
         cart_page.remove_products_from_cart()
-        # Проверка очистки корзины
+        # Проверка пустоты в корзине
 
-
+    # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_checkout_flow --browser=firefox --headless
     @pytest.mark.smoke
     def test_checkout_flow(self, logged_in_page, inventory_page, cart_page, pay_page):
         """Оформление заказа"""
@@ -95,9 +103,9 @@ class TestSauceDemo:
         pay_page.finish_checkout()
         # Проверка успешного оформления
         assert "complete" in pay_page.page.url
-        # Проверка очистки корзины
+        # Проверка пустоты в корзине
 
-
+    # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_full_flow --browser=firefox --headless
     @pytest.mark.smokefull
     def test_full_flow(self, login_page, inventory_page, cart_page, pay_page):
         """Полный smoke-тест основного потока"""

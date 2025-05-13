@@ -1,8 +1,10 @@
 from playwright.sync_api import Page
+from config.logger import get_logger
 
 class BasePage:
     def __init__(self, page: Page):
         self.page = page
+        self.logger = get_logger(self.__class__.__name__)
 
     def navigate(self, url):
         self.page.goto(url)
