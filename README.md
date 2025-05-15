@@ -63,14 +63,14 @@ pytest -m "smoke"
 ```
 * Прочие команды `pytest`:
 ```shell
-pytest --browser firefox                        # выбор браузера (chromium, webkit) (если описаны в pytest.ini)
-pytest --headless true                          # скрыть браузер (если описаны в pytest.ini)
+pytest --browser=firefox                        # выбор браузера (chromium, webkit) (если описаны в pytest.ini)
+pytest --headless                               # скрыть браузер (если описаны в pytest.ini)
 pytest -k "name"                                # пуск тестов по имени
 pytest -n 4                                     # пуск тестов паралельно (потоки процессора)
 pytest --alluredir=reports/allure-results       # пуск тестов с отчетом
 
 Полная команда может выглядеть так:
-pytest test/smoke --browser firefox --headless true --alluredir=reports/allure-results
+pytest test/smoke --browser=firefox --headless --alluredir=reports/allure-results
 ```
 * Просмотр отчёта [`allure`](https://github.com/allure-framework/allure2/releases):
 ```shell

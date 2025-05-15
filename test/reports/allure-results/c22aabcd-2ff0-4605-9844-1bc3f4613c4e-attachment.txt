@@ -1,0 +1,25 @@
+2025-05-15 18:02:51 [    INFO] ActionPage: Логинимся учёткой: standard_user
+2025-05-15 18:02:51 [    INFO] ActionPage: Переход по URL: https://www.saucedemo.com/
+2025-05-15 18:02:52 [    INFO] AssertPage: Элемент #user-name видим на странице
+2025-05-15 18:02:52 [    INFO] AssertPage: Элемент #password видим на странице
+2025-05-15 18:02:52 [    INFO] AssertPage: Элемент #login-button видим на странице
+2025-05-15 18:02:52 [    INFO] ActionPage: Заполнение поля #user-name текстом: standard_user
+2025-05-15 18:02:52 [    INFO] ActionPage: Заполнение поля #password текстом: secret_sauce
+2025-05-15 18:02:52 [    INFO] ActionPage: Клик по элементу: #login-button
+2025-05-15 18:02:52 [    INFO] ActionPage: Ожидание загрузки URL: https://www.saucedemo.com/inventory.html
+2025-05-15 18:02:52 [    INFO] AssertPage: URL соответствует ожидаемому: https://www.saucedemo.com/inventory.html
+2025-05-15 18:02:52 [    INFO] ActionPage: Клик по элементу: #add-to-cart-sauce-labs-backpack
+2025-05-15 18:02:52 [    INFO] ActionPage: Клик по элементу: #add-to-cart-sauce-labs-bike-light
+2025-05-15 18:02:52 [    INFO] ActionPage: Клик по элементу: .shopping_cart_link
+2025-05-15 18:02:52 [    INFO] ActionPage: Клик по элементу: #checkout
+2025-05-15 18:02:52 [    INFO] ActionPage: Заполнение поля #first-name текстом: Mike
+2025-05-15 18:02:52 [    INFO] ActionPage: Заполнение поля #last-name текстом: Wazowski
+2025-05-15 18:02:52 [    INFO] ActionPage: Заполнение поля #postal-code текстом: 2319
+2025-05-15 18:02:52 [    INFO] ActionPage: Клик по элементу: #continue
+2025-05-15 18:02:53 [    INFO] ActionPage: Клик по элементу: #finish
+2025-05-15 18:02:53 [    INFO] ActionPage: Выход из системы
+2025-05-15 18:02:53 [    INFO] ActionPage: Клик по элементу: #react-burger-menu-btn
+2025-05-15 18:02:53 [    INFO] AssertPage: Элемент #logout_sidebar_link видим на странице
+2025-05-15 18:02:53 [    INFO] ActionPage: Клик по элементу: #logout_sidebar_link
+2025-05-15 18:02:53 [    INFO] ActionPage: Ожидание загрузки URL: https://www.saucedemo.com/
+2025-05-15 18:02:53 [    INFO] AssertPage: URL соответствует ожидаемому: https://www.saucedemo.com/
