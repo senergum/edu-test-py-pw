@@ -9,7 +9,7 @@
 
 ## 2. Команды
 
-### Windows CMD:
+### 2.1. Windows CMD:
 <details><summary>==НАЖМИ== Включение</summary><p>
 
 #### Основные способы запуска:
@@ -160,7 +160,7 @@ reg import      # импорт ветки
 
 ---
 
-### Unix/Bash:
+### 2.2. Unix/Bash:
 <details><summary>==НАЖМИ== Включение</summary><p>
 
 #### Linux:
@@ -473,6 +473,7 @@ history | grep ssh   # поиск в истории команд
 
 ---
 
+## 3. Прочее
 <details><summary>==НАЖМИ== Основные отличия Windows CMD от Unix/Bash</summary><p>
 
 * Основные отличия Windows CMD от Unix/Bash:
