@@ -154,7 +154,7 @@ allure serve reports/allure-results
 
 ## **Работа в репозитории**
 * **Пример безопасного workflow в `git`**
-```
+```shell
 # Перед началом работы
 git pull origin main
 
