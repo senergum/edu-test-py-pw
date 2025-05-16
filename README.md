@@ -83,6 +83,7 @@ pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_login_logout --br
 ```
 
 * Просмотр отчёта [`allure`](https://github.com/allure-framework/allure2/releases):
+  * Подробнее в [docs\`ALLURE.md`](https://github.com/MikhailPyshenko/edu-test-py-pw/blob/main/docs/ALLURE.md)
 ```shell
 # Перейдите командой CD в папку reports
 # Запустите генерацию отчётов из сырых данных в allure-results, в готовые в allure-report
