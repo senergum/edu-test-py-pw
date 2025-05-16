@@ -1,9 +1,6 @@
 from playwright.sync_api import Page
 from config.logger import get_logger
 
-from playwright.sync_api import Page
-from config.logger import get_logger
-
 
 class AssertPage:
     def __init__(self, page: Page):
@@ -77,7 +74,6 @@ class AssertPage:
             list_selector: str,
             position: int,
             expected_text: str,
-            item_selector: str = "> div.inventory_item"
-    ):
+            item_selector: str = "> div.inventory_item"):
         name_locator = f"{list_selector} {item_selector}:nth-child({position}) .inventory_item_name"
         self.element_text_is(name_locator, expected_text)
