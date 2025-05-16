@@ -94,10 +94,10 @@ allure serve reports/allure-results
 ```
 
 ## **Покрытые авто-тестами модули**
-* **Авторизация**   page/login/login_page.py
-* **Товары**        page/inventory/inventory_page.py
-* **Корзина**       page/cart/cart_page.py
-* **Покупка**       page/pay/pay_page.py
+* **Авторизация** - `page/login/login_page.py`
+* **Товары** - `page/inventory/inventory_page.py`
+* **Корзина** - `page/cart/cart_page.py`
+* **Покупка** - `page/pay/pay_page.py`
 
 ## **Архитектура проекта**
 <details>
