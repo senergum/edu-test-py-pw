@@ -1,8 +1,8 @@
 # ALLURE отчёты
 
-## Запуск allure отчётов
+## Локальный запуск `Allure` отчётов
 ### Windows
-#### В ручную (CMD)
+#### В ручную `CMD`
 * Открыть командную строку
   * Откройте терминал в `IDE`, например в `PyCharm`
   * Нажмите `Win + R` и введите `cmd`, нажмите клавишу `enter`
@@ -18,7 +18,7 @@ cd C:\Users\User\PycharmProjects\allure\bin
 ```shell
 .\allure open C:\Users\User\PycharmProjects\edu-test\reports\allure-report
 ```
-* Альтернативно, запустить через `serve`, что сгенерирует и откроет отчёт и после закрытия удалит временные файлы
+* Альтернативно (Так даже лучше), запустить через `serve`, что сгенерирует и откроет отчёт и после закрытия удалит временные файлы
 ```shell
 .\allure serve C:\Users\User\PycharmProjects\edu-test\reports\allure-results
 ```
@@ -43,10 +43,10 @@ cd C:\Users\User\PycharmProjects\allure\bin
   * Если путь добавлен верно, то увидите версию `allure`  
 * Теперь можно использовать `allure` на прямую
 ```shell
-# Перейдите командой CD в папку reports
-# Запустите генерацию отчётов из сырых данных в allure-results, в готовые в allure-report
+# Перейдите командой CD в основную директорию вашего проекта
+# Запустите генерацию отчётов на основе сырых данных из allure-results, в готовый html отчёт по адресу allure-report
 allure generate reports/allure-results -o reports/allure-report --clean
-# Запустите локально хост отчёта
+# Запустите локальный хост отчёта
 allure open reports/allure-report
 # ИЛИ Команда генерации + запуск + удаление
 allure serve reports/allure-results

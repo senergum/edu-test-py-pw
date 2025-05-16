@@ -2,7 +2,7 @@
 # Команда для установки:
 # pip install requirements.txt
 # Команда для раздельной установки:
-# pip install playwright pytest pytest-html allure-pytest requests locust
+# pip install playwright pytest pytest-html allure-pytest requests locust faker
 # Команда формирования этого документа (заменяет старый т.е. этот):
 # pip freeze > requirements.txt
 
@@ -31,6 +31,7 @@ charset-normalizer==3.4.1
 click==8.1.8
 colorama==0.4.6
 ConfigArgParse==1.7
+Faker==37.3.0
 Flask==3.1.0
 flask-cors==5.0.1
 Flask-Login==0.6.3

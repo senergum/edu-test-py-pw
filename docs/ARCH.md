@@ -58,61 +58,7 @@
 
 ## Архитектура POM удобная
 * Удобный формат директорий объединяющей все ресурсы page object модели модуля в одном месте
-<details><summary>==[НАЖМИ]== Структура директорий</summary><p>
 
-```
-/test-projectname                   # корневой каталог (репозиторий) проекта авто-тестов
-    /page                               # page object модели
-        __init__.py
-        /module_1_page                        # папка с page object моделью и данными модуля 1
-            __init__.py
-            module_1_page.py                      # page object класс модуля 1
-            module_1_locators.py                  # селекторы элементов модуля 1
-            module_1_data.py                      # тестовые данные модуля 1
-        /module_2_page                        # папка с page object моделью и данными модуля 2
-            __init__.py
-            module_2_page.py                      # page object класс модуля 2 
-            module_2_locators.py                  # селекторы элементов модуля 2
-            module_2_data.py                      # тестовые данные модуля 2
-        base_page.py                        # базовый page object класс (основные методы работы со страницей)
-    /test                               # тестовые сценарии с группировкой по видам
-        __init__.py
-        /smoke                              # дымы (фронт)
-            test_module.py
-        /accept                             # приемка (фронт)
-            test_module.py
-        /api                                # апи (бэк)
-            test_module_api.py
-        /load                               # нагрузочное (locust)
-            locust_smoke.py
-    /config                             # конфигурации
-        __init__.py
-        logger.py                           # конфигурация логирования
-        /utils                              # вспомогательные инструменты
-            __init__.py
-            /drivers                            # веб-драйвера и портативные браузеры
-            actions.py                          # сложные методы и действия на страницах
-            asserts.py                          # проверки
-            helpers.py                          # вспомогательные элементы
-    /report                             # отчеты и артефакты (если не подключено хранение в jenkins)
-        /screenshots                        # скриншоты
-        /allure-results                     # allure отчеты
-        /pytest-html                        # pytest отчеты
-        /locust                             # locust отчеты нагрузочного
-        /logs                               # логи выполнения тестов
-    /docs                               # документация
-        PLAN.md                             # документация проекта, план автоматизации, тест-кейсы и история изменений
-        ARCH.md                             # описание архитектуры проекта
-        CODE.md                             # описание стиля кода в проекте
-    conftest.py                         # фикстуры pytest
-    pytest.ini                          # конфигурация тестов
-    requirements.txt                    # зависимости
-    README.md                           # описание проекта
-    .gitignore                          # игнор лист git
-```
-</p></details>
-
-* Альтернативный (графически) вариант демонстрации директорий 3:
 <details><summary>==[НАЖМИ]== Структура директорий</summary><p>
 
 ```
@@ -140,15 +86,27 @@
 │   │   └── test_module_api.py
 │   ├── /load/                      # нагрузочное (locust)
 │   └────── locust_smoke.py
-├── /config/                        # конфигурации
+├── /config/                        
+│   ├── /drivers/                   # веб-драйвера и портативные браузеры
+│   ├── /api/                       
+│   │   ├── api_client.py           # базовый клиент для API-запросов
+│   │   └── auth.py                 # методы аутентификации
+│   ├── /cicd/                       
+│   │   ├── jenkins.py              # интеграция с CI/CD
+│   │   └── telegram.py             # уведомления в Telegram
+│   ├── /env/                       
+│   │   └── prod.yaml               # yaml настройки для окружения
+│   ├── /utils/                     
+│   │   ├── actions.py              # действия
+│   │   ├── asserts.py              # проверки
+│   │   ├── helpers.py              # вспомогательные методы
+│   │   ├── reporter.py             # утилита для отчётов allure
+│   │   ├── db_connector.py         # подключение к БД
+│   │   ├── file_utils.py           # работа с файлами (CSV, Excel, JSON)
+│   │   ├── mock_generator.py       # генерация тестовых данных
+│   │   └── __init__.py
 │   ├── logger.py                   # конфигурация логирования
-│   ├── __init__.py
-│   └── /utils/                     # вспомогательные инструменты
-│       ├── /drivers/               # веб-драйвера и портативные браузеры
-│       ├── actions.py              # сложные методы и действия на страницах
-│       ├── asserts.py              # проверки
-│       ├── helpers.py              # вспомогательные элементы
-│       └── __init__.py
+│   └── __init__.py
 ├── /report/                        # отчеты и артефакты (если не подключено хранение в jenkins)
 │   ├── /screenshots/               # скриншоты
 │   ├── /allure-results/            # allure отчеты
@@ -238,6 +196,7 @@
 * Имеет flat структуру (плоскую, одно-уровневую) для Minimum Viable Product (MVP), Proof of Concept (PoC), тестирования, обучения
 * Проект на ранней стадии, 1–2 модуля.
 * Когда нет смысла тратить время на структуру — важно проверить гипотезу.
+
 ### Гибридная архитектура Semi-modular POM
 ```
 /test-project
@@ -261,7 +220,7 @@
 │   └── ...
 └── conftest.py
 ```
-* Команде нужно сохранить читаемость POM при реиспользовании кода между модулями.
+* Команде нужно сохранить читаемость POM при ре-использовании кода между модулями.
 * Количество модулей небольшое, но требуется изоляция логики.
 
 ### Domain-Driven Testing Architecture (DDD-influenced)
