@@ -3,7 +3,9 @@
 ## Запуск allure отчётов
 ### Windows
 #### В ручную (CMD)
-* Открыть командную строку (Включить `CMD`: `WIN+R` ~ `cmd` ~ `ENTER`)
+* Открыть командную строку
+  * Откройте терминал в `IDE`, например в `PyCharm`
+  * Нажмите `Win + R` и введите `cmd`, нажмите клавишу `enter`
 * Перейти в папку с `allure.bat`, например
 ```shell
 cd C:\Users\User\PycharmProjects\allure\bin
