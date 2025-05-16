@@ -46,20 +46,30 @@ def logged_in_page(login_page):
     yield login_page.page
     login_page.logout()
 
+# pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo --browser=firefox --headless --alluredir=reports/allure-results
+@allure.epic("Приложение SauceDemo")
+@allure.feature("Дымовые тесты")
 class TestSauceDemo:
     # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_login_logout --browser=firefox --headless --alluredir=reports/allure-results
     @allure.title("Проверка входа и выхода")
-    @allure.description("Проверяет, что пользователь может войти и выйти из системы")
+    @allure.description("Проверяет, что пользователь может авторизоваться и выйти из системы")
+    @allure.tag("smoke", "auth")
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.smoke
     def test_login_logout(self, login_page):
         """Проверка входа и выхода"""
         login_page.login()
-        assert login_page.page.url == INVENTORY_URL
+        with allure.step("Проверяем, что попали на страницу инвентаря"):
+            login_page.asserts.url_is(INVENTORY_URL)
         login_page.logout()
-        assert login_page.page.url == LOGIN_URL
-        login_page.logger.info("Тест логина успешный")
+        with allure.step("Проверяем, что вернулись на страницу логина"):
+            login_page.asserts.url_is(LOGIN_URL)
 
     # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_product_sorting --browser=firefox --headless
+    @allure.title("Проверка сортировки товаров")
+    @allure.description("Проверяет сортировку товаров по возрастанию цены")
+    @allure.tag("smoke", "inventory")
+    @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.smoke
     def test_product_sorting(self, logged_in_page, inventory_page):
         """Проверка сортировки товаров"""
@@ -67,6 +77,10 @@ class TestSauceDemo:
         # Здесь можно добавить проверку корректности сортировки
 
     # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_add_to_cart --browser=firefox --headless
+    @allure.title("Проверка добавления и удаления товаров из корзины")
+    @allure.description("Проверяет, что товары добавляются и удаляются из корзины")
+    @allure.tag("smoke", "cart")
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.smoke
     def test_add_to_cart(self, logged_in_page, inventory_page):
         """Добавление товаров в корзину"""
@@ -79,6 +93,10 @@ class TestSauceDemo:
         inventory_page.cart_badge_not_visible()
 
     # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_cart --browser=firefox --headless
+    @allure.title("Проверка содержимого и очистки корзины")
+    @allure.description("Добавляет товары в корзину, переходит в неё и очищает")
+    @allure.tag("smoke", "cart")
+    @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.smoke
     def test_cart(self, logged_in_page, cart_page, inventory_page):
         """Добавление товаров в корзину"""
@@ -91,6 +109,10 @@ class TestSauceDemo:
         # Проверка пустоты в корзине
 
     # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_checkout_flow --browser=firefox --headless
+    @allure.title("Оформление заказа")
+    @allure.description("Проходит полный путь оформления заказа с добавлением товара")
+    @allure.tag("smoke", "checkout")
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.smoke
     def test_checkout_flow(self, logged_in_page, inventory_page, cart_page, pay_page):
         """Оформление заказа"""
@@ -102,10 +124,15 @@ class TestSauceDemo:
         pay_page.fill_checkout_info()
         pay_page.finish_checkout()
         # Проверка успешного оформления
-        assert "complete" in pay_page.page.url
+        with allure.step("Проверка URL успешного завершения покупки"):
+            assert "complete" in pay_page.page.url
         # Проверка пустоты в корзине
 
     # pytest test/smoke/test_smoke_saucedemo.py::TestSauceDemo::test_full_flow --browser=firefox --headless
+    @allure.title("Полный путь пользователя от логина до оформления")
+    @allure.description("Smoke: от логина до финального экрана завершения покупки")
+    @allure.tag("smokefull", "e2e")
+    @allure.severity(allure.severity_level.BLOCKER)
     @pytest.mark.smokefull
     def test_full_flow(self, login_page, inventory_page, cart_page, pay_page):
         """Полный smoke-тест основного потока"""
@@ -120,7 +147,7 @@ class TestSauceDemo:
         pay_page.fill_checkout_info()
         pay_page.finish_checkout()
         # Проверки
-        assert login_page.page.url == PAY_URL
+        login_page.asserts.url_is(PAY_URL)
         # Выход
         login_page.logout()
-        assert login_page.page.url == LOGIN_URL
+        login_page.asserts.url_is(LOGIN_URL)
