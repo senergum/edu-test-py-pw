@@ -72,3 +72,13 @@ class AssertPage:
         count = self.page.locator(locator).count()
         assert count == expected_count, f"Ожидали {expected_count} элементов {locator}, получили: {count}"
         self.logger.info(f"Найдено {count} элементов {locator} (ожидалось: {expected_count})")
+
+    def element_position_in_list_has_text(
+            self,
+            list_selector: str,
+            position: int,
+            expected_text: str,
+            item_selector: str = "> div.inventory_item"
+    ):
+        name_locator = f"{list_selector} {item_selector}:nth-child({position}) .inventory_item_name"
+        self.element_text_is(name_locator, expected_text)
