@@ -6,6 +6,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(_
 LOG_DIR = os.path.join(PROJECT_ROOT, "reports", "logs")
 os.makedirs(LOG_DIR, exist_ok=True)
 
+
 def get_logger(name: str = "test"):
     logger = logging.getLogger(name)
     if logger.hasHandlers():

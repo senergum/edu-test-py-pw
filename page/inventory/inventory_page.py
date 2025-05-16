@@ -4,8 +4,16 @@ from page.base_page import BasePage
 from config.utils.actions import ActionPage
 from config.utils.asserts import AssertPage
 from config.utils.reporter import ReportPage
-from page.inventory.inventory_locators import *
-from page.inventory.inventory_data import *
+from page.inventory.inventory_locators import (
+    SORT_DROPDOWN,
+    INVENTORY_LIST,
+    ADD_TO_CART_1,
+    ADD_TO_CART_2,
+    REMOVE_FROM_CART_1,
+    REMOVE_FROM_CART_2,
+    SHOPPING_CART_BADGE,
+    SHOPPING_CART)
+from page.inventory.inventory_data import SORT_OPTION_VALUE, FIRST_ITEM_POST_SORT_LOHI
 
 
 class InventoryPage(BasePage):

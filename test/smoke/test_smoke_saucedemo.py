@@ -1,13 +1,13 @@
 import pytest
 import allure
 from page.login.login_page import LoginPage
-from page.login.login_data import *
+from page.login.login_data import LOGIN_URL
 from page.inventory.inventory_page import InventoryPage
-from page.inventory.inventory_data import *
+from page.inventory.inventory_data import INVENTORY_URL
 from page.cart.cart_page import CartPage
 from page.cart.cart_data import *
 from page.pay.pay_page import PayPage
-from page.pay.pay_data import *
+from page.pay.pay_data import PAY_URL
 
 
 # Шаблон тестовой фикстуры

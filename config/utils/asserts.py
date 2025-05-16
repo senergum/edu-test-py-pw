@@ -1,7 +1,6 @@
 from playwright.sync_api import Page
 from config.logger import get_logger
 
-
 from playwright.sync_api import Page
 from config.logger import get_logger
 

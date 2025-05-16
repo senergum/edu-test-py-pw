@@ -4,6 +4,7 @@ from config.logger import get_logger
 HOME_URL = "https://www.saucedemo.com/"
 BURGER_MENU = "#react-burger-menu-btn"
 
+
 class BasePage:
     def __init__(self, page: Page):
         self.page = page

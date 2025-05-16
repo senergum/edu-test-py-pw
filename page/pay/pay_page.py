@@ -3,8 +3,13 @@ from page.base_page import BasePage
 from config.utils.actions import ActionPage
 from config.utils.asserts import AssertPage
 from config.utils.reporter import ReportPage
-from page.pay.pay_data import *
-from page.pay.pay_locators import *
+from page.pay.pay_data import FIRST_NAME, LAST_NAME, ZIP_CODE
+from page.pay.pay_locators import (
+    FIRST_NAME_INPUT,
+    LAST_NAME_INPUT,
+    POSTAL_CODE_INPUT,
+    CONTINUE_BUTTON,
+    FINISH_BUTTON)
 
 
 class PayPage(BasePage):

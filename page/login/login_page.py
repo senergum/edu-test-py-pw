@@ -3,8 +3,19 @@ from page.base_page import BasePage
 from config.utils.actions import ActionPage
 from config.utils.asserts import AssertPage
 from config.utils.reporter import ReportPage
-from page.login.login_locators import *
-from page.login.login_data import *
+from page.login.login_locators import (
+    USERNAME_INPUT,
+    PASSWORD_INPUT,
+    LOGIN_BUTTON,
+    ERROR_MESSAGE_BUTTON,
+    MENU_BUTTON,
+    LOGOUT_BUTTON)
+from page.login.login_data import (
+    STANDARD_USER,
+    PASSWORD,
+    LOGIN_URL,
+    LOCKED_USER,
+    ERROR_MESSAGE)
 
 
 class LoginPage(BasePage):

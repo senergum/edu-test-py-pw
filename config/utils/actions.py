@@ -59,4 +59,3 @@ class ActionPage:
         # Ждёт появления элемента с заданным локатором (5000 тикетов = 5 секунд)
         self.logger.info(f"Ожидание селектора {locator} в течение {timeout} мс")
         self.page.wait_for_selector(locator, timeout=timeout)
-
