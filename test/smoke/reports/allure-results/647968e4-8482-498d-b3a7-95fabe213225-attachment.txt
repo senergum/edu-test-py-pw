@@ -1,3 +1,0 @@
-2025-05-14 01:39:02 [   DEBUG] asyncio: Using proactor: IocpProactor
-2025-05-14 01:39:03 [    INFO] LoginPage: Логинимся учёткой: standard_user
-2025-05-14 01:39:06 [    INFO] LoginPage: Тест логина успешный
